@@ -26,6 +26,8 @@ gem 'devise'
 
 gem 'bower-rails'
 
+gem 'puma'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -43,6 +45,9 @@ group :development, :test do
   # Headless WebKit API for testing Angular
   gem 'poltergeist'
   gem 'database_cleaner'
+
+  # Testing for client-side Angular code
+  gem 'teaspoon-jasmine'
 end
 
 group :development do
@@ -50,9 +55,5 @@ group :development do
   gem 'web-console', '~> 2.0'
   # For fake seed data
   gem 'faker'
-end
-
-group :production do
-  gem 'puma'
 end
 

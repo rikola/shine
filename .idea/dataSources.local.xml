@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails shine: development" uuid="994bf21a-533e-438b-bcd4-91c41aa67e62">
+      <user-name>shine</user-name>
+      <user-password>dfd9dfc2dfc3dfc4dfcf</user-password>
+      <schema-pattern>shine_development.pg_catalog shine_development.public</schema-pattern>
+      <default-schemas>shine_development.public</default-schemas>
+    </data-source>
+    <data-source name="Rails shine: test" uuid="67c4e3cc-6026-40e7-a923-4dcf51b0bf1e">
+      <user-name>shine</user-name>
+      <user-password>dfd9dfc2dfc3dfc4dfcf</user-password>
+    </data-source>
+  </component>
+</project>
