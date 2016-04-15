@@ -1,0 +1,24 @@
+language: ruby
+rvm:
+  - 2.2.4
+cache: bundler
+
+services:
+  - postgresql
+
+before_script: "bundle exec rake db:drop db:create db:migrate"
+
+before_deploy: "echo 'Deploying...'"
+deploy:
+  provider: heroku
+  api_key:
+    secure: e/SWYsj+mtB2QSCcdv3AhanBnWUzTRFkPzHcCSAjrGis+7lfWA+og0Pj5umKnQN7aIZKRAY9OU5wxhW1/hDlyjQGBRr+U++lw/hUkvkznuHd3njcuPf2h8FuhQrOfmvNJA1hSUaFKZ6Kfnlx5bSu//S4slrHA6DGbIEFSVEiF5s6pZi5+9f/ShkZ9VfvTqV0Wmb5M5nZ5CgqRaygAhBDDMzW3KBTlRRybveyj9ee+PBXnA4ZeXXfO6FbIk0fOFRIL6xDRDhFtmUZxquZjv4rv1SCE3KpJ1by7MnYELHl62/Pymh4TFA+hOaW4BPqw9vbuWr/lg9yxguicecUGmLVrUTgbQmR55z11jKrQMn3jRzgdwCC5Y4EkYbMQfusJNfRGIPLaAldPKoGfHprvBJn8KWTYFlPdi1oed2IA1maW19bgiub0trlhn8I7WxmzRquLYTOSUcBuARIJ+CPpdenwh8FOhmIUGAet2gFOMxp2zzu2uuOVQ8V8wwIR+b4Uebap1dxE156NHuBUBVn69HH+TMNY/zNb9LjGD3GoHyVD96DnD+VvfjfPmY1djpKcdOpPFaCBcQIa5b3MD/np/UR+Els5/0lrzmyOAfTumMzpwohqY7Kz9jtGe0AENchoXMH0JE1xUn5BIsmdaQi2kR3Mw/K8GH774oceLlM6HPdATQ=
+  app: blooming-lowlands-79367
+  on:
+    repo: rikola/shine
+
+  run:
+    - "bundle exec rake db:migrate"
+    - "bundle exec rake cleanup"
+
+after_deploy: "echo 'Deploy complete!'"
